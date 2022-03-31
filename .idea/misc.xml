@@ -3,7 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.4244791666666667" />
+        <entry key="app/src/main/res/drawable/swoosh_button.xml" value="0.2745" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.34768931070963544" />
       </map>
     </option>
   </component>
