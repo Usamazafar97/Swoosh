@@ -3,6 +3,7 @@ package com.example.swoosh
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_league.*
 
@@ -13,19 +14,20 @@ class LeagueActivity : AppCompatActivity() {
 
         mensBtn.setOnClickListener {
 
-            // toggling
-//            mensBtn.isEnabled = !mensBtn.isEnabled
-
-//            mensBtn.isEnabled = true
-
-            Toast.makeText(this, "Men Clicked", Toast.LENGTH_SHORT).show()
+            // changing background
+            changeBackground(it)
         }
 
         womenBtn.setOnClickListener {
 
-//            womenBtn.isEnabled = !mensBtn.isEnabled
+            // changing background
+            changeBackground(it)
+        }
 
-            Toast.makeText(this, "Women Clicked", Toast.LENGTH_SHORT).show()
+        coedBtn.setOnClickListener {
+
+            // changing background
+            changeBackground(it)
         }
 
         nextBtn.setOnClickListener {
@@ -35,4 +37,11 @@ class LeagueActivity : AppCompatActivity() {
             startActivity(skillActivityIntent)
         }
     }
+
+    private fun changeBackground(view: View?) {
+
+        view?.setBackgroundResource(R.drawable.swoosh_button_checked)
+    }
+
+
 }
