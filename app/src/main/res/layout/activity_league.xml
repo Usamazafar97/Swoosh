@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/desiredleaguebg" />
 
     <Button
-        android:id="@+id/mensBtn"
+        android:id="@+id/menBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
@@ -50,7 +50,7 @@
         app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mensBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/menBtn" />
 
     <Button
         android:id="@+id/coedBtn"

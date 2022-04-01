@@ -15,7 +15,7 @@ class LeagueActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_league)
 
-        mensBtn.setOnClickListener {
+        menBtn.setOnClickListener {
 
             // changing background
             changeBackground(it)
@@ -59,7 +59,7 @@ class LeagueActivity : AppCompatActivity() {
 
     private fun callSkillActivity(leagueSelected: String) {
 
-        // intent for transfer the handle from current activity to League Activity
+        // intent for transfer the handle from current activity to Skill Activity
         val skillActivityIntent = Intent(this, SkillActivity::class.java)
 
         // adding the data to intent
@@ -73,17 +73,17 @@ class LeagueActivity : AppCompatActivity() {
 
         // checking the view (button), and normalize the remaining buttons to normal background
         when(view){
-            mensBtn -> {
+            menBtn -> {
                 womenBtn.setBackgroundResource(R.drawable.swoosh_button)
                 coedBtn.setBackgroundResource(R.drawable.swoosh_button)
             }
             womenBtn -> {
-                mensBtn.setBackgroundResource(R.drawable.swoosh_button)
+                menBtn.setBackgroundResource(R.drawable.swoosh_button)
                 coedBtn.setBackgroundResource(R.drawable.swoosh_button)
             }
             coedBtn -> {
                 womenBtn.setBackgroundResource(R.drawable.swoosh_button)
-                mensBtn.setBackgroundResource(R.drawable.swoosh_button)
+                menBtn.setBackgroundResource(R.drawable.swoosh_button)
             }
 
         }

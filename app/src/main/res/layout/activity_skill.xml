@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <Button
-        android:id="@+id/mensBtn"
+        android:id="@+id/ballerBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/swoosh_toggle"
@@ -55,11 +55,11 @@
         app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/beginnerBtn"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/beginnerBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:backgroundTint="@null"
@@ -67,14 +67,14 @@
         android:text="Beginner"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/mensBtn"
-        app:layout_constraintEnd_toStartOf="@+id/mensBtn"
+        app:layout_constraintBottom_toBottomOf="@+id/ballerBtn"
+        app:layout_constraintEnd_toStartOf="@+id/ballerBtn"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/mensBtn" />
+        app:layout_constraintTop_toTopOf="@+id/ballerBtn" />
 
     <Button
-        android:id="@+id/nextBtn"
+        android:id="@+id/finishBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
