@@ -21,13 +21,14 @@
         app:srcCompat="@drawable/desiredleaguebg" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/mensBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="50dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/swoosh_toggle"
+        android:textColor="@color/white"
         android:text="Mens"
         android:textAllCaps="false"
         app:backgroundTint="@null"
@@ -36,37 +37,39 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/womenBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/swoosh_toggle"
+        android:textColor="@color/white"
         android:text="Women"
         android:textAllCaps="false"
         app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/mensBtn" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/coedBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/swoosh_toggle"
+        android:textColor="@color/white"
         android:text="Co-ed"
         android:textAllCaps="false"
         app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/womenBtn" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/nextBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -97,7 +100,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:text="Desired League:"
-        android:textSize=""
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
