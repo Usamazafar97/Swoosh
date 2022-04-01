@@ -1,15 +1,19 @@
-package com.example.swoosh
+package com.example.swoosh.controller
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import com.example.swoosh.PLAYER
+import com.example.swoosh.R
+import com.example.swoosh.model.Player
 import kotlinx.android.synthetic.main.activity_league.*
 
 class LeagueActivity : AppCompatActivity() {
 
     // passing the selected league to the next activity
-    var leagueSelected = ""
+    var player =  Player("","")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +28,7 @@ class LeagueActivity : AppCompatActivity() {
             removeOtherButtonBackground(it)
 
             // set the selected league to men
-            leagueSelected = "men"
+            player.leagueSelected = "men"
         }
 
         womenBtn.setOnClickListener {
@@ -36,7 +40,7 @@ class LeagueActivity : AppCompatActivity() {
             removeOtherButtonBackground(it)
 
             // set the selected league to women
-            leagueSelected = "women"
+            player.leagueSelected = "women"
         }
 
         coedBtn.setOnClickListener {
@@ -48,25 +52,35 @@ class LeagueActivity : AppCompatActivity() {
             removeOtherButtonBackground(it)
 
             // set the selected league to co-ed
-            leagueSelected = "co-ed"
+            player.leagueSelected = "co-ed"
         }
 
         nextBtn.setOnClickListener {
 
-            callSkillActivity(leagueSelected)
+            callSkillActivity(player)
         }
     }
 
-    private fun callSkillActivity(leagueSelected: String) {
+    private fun callSkillActivity(leagueSelected: Player) {
 
-        // intent for transfer the handle from current activity to Skill Activity
-        val skillActivityIntent = Intent(this, SkillActivity::class.java)
+        // if user doesn't select any league
+        if (player.leagueSelected != ""){
 
-        // adding the data to intent
-        skillActivityIntent.putExtra(LEAGUE_SELECTED, leagueSelected)
+            // intent for transfer the handle from current activity to Skill Activity
+            val skillActivityIntent = Intent(this, SkillActivity::class.java)
 
-        // calling the skill activity
-        startActivity(skillActivityIntent)
+            // adding the data to intent
+            skillActivityIntent.putExtra(PLAYER, player)
+
+            // calling the skill activity
+            startActivity(skillActivityIntent)
+
+        }
+        else{
+
+            // show message to select the league
+            Toast.makeText(this,"Please select the league",Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun removeOtherButtonBackground(view: View) {
