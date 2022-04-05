@@ -3,6 +3,8 @@ package com.example.swoosh.controller
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.example.swoosh.PLAYER
@@ -13,11 +15,13 @@ import kotlinx.android.synthetic.main.activity_league.*
 class LeagueActivity : AppCompatActivity() {
 
     // passing the selected league to the next activity
-    var player =  Player("","")
+    var player : Player = Player("", "")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_league)
+
+
 
         menBtn.setOnClickListener {
 
@@ -61,10 +65,26 @@ class LeagueActivity : AppCompatActivity() {
         }
     }
 
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+
+        Log.d("SavedInstanceState", "onRestore")
+        player = savedInstanceState.getParcelable<Player>(PLAYER)!!
+
+        Log.d("SavedInstanceState", "onRestore -> ${player.leagueSelected} + ${player.skill}")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        Log.d("SavedInstanceState", "onSave")
+        outState?.putParcelable(PLAYER, player)
+    }
+
     private fun callSkillActivity(leagueSelected: Player) {
 
         // if user doesn't select any league
-        if (player.leagueSelected != ""){
+        if (player.leagueSelected != "") {
 
             // intent for transfer the handle from current activity to Skill Activity
             val skillActivityIntent = Intent(this, SkillActivity::class.java)
@@ -75,18 +95,17 @@ class LeagueActivity : AppCompatActivity() {
             // calling the skill activity
             startActivity(skillActivityIntent)
 
-        }
-        else{
+        } else {
 
             // show message to select the league
-            Toast.makeText(this,"Please select the league",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Please select the league", Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun removeOtherButtonBackground(view: View) {
 
         // checking the view (button), and normalize the remaining buttons to normal background
-        when(view){
+        when (view) {
             menBtn -> {
                 womenBtn.setBackgroundResource(R.drawable.swoosh_button)
                 coedBtn.setBackgroundResource(R.drawable.swoosh_button)
